@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.happybirthday3.ui.theme.HappyBirthday3Theme
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -30,7 +31,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingText(message: String, modifier: Modifier = Modifier){
     Text(
-        text = message
+        text = message,
+        fontSize = 100.sp,
+        lineHeight = 116.sp
     )
 }
 
