@@ -1,11 +1,14 @@
 fun main() {
-    val trafficLightColor = "Yellow"
+    val trafficLightColor = "Black"
 
     if (trafficLightColor == "Red") {
         println("Stop")
     } else if (trafficLightColor == "Yellow") {
         println("Slow")
-    } else {
+    } else if (trafficLightColor == "Green") {
         println("Go")
+    } else {
+        println("Invalid traffic-light color")
     }
+
 }
