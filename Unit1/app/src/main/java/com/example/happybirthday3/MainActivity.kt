@@ -22,6 +22,8 @@ import com.example.happybirthday3.ui.theme.HappyBirthday3Theme
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +32,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             HappyBirthday3Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
-                    GreetingText(message = "Happy Birthday Danis!", from = "From Emma")
+                    GreetingImage(
+                        message = "Happy Birthday Sam!",
+                        from = "From Emma"
+                    )
                 }
             }
         }
@@ -65,10 +70,19 @@ fun GreetingText(message: String,from: String, modifier: Modifier = Modifier){
 @Composable
 fun GreetingImage(message: String, from: String,modifier: Modifier = Modifier){
     val image = painterResource(R.drawable.macan)
-    Image(
-        painter = image,
-        contentDescription = null
-    )
+    Box(modifier) {
+        Image(
+            painter = image,
+            contentDescription = null
+        )
+        GreetingText(
+            message = message,
+            from = from,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp)
+        )
+    }
 }
 
 @Preview(showBackground = true)
