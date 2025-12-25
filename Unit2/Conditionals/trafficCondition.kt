@@ -1,9 +1,9 @@
 fun main() {
-    val trafficLightColor = "Yellow"
+    val trafficLightColor = "Amber"
 
     when (trafficLightColor) {
         "Red" -> println("Stop")
-        "Yellow" -> println("Slow")
+        "Yellow", "Amber" -> println("Slow")
         "Green" -> println("Go")
         else -> println("Invalid traffic-light color")
     }
