@@ -15,11 +15,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.happybirthday3.ui.theme.HappyBirthday3Theme
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.Image
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,10 +62,20 @@ fun GreetingText(message: String,from: String, modifier: Modifier = Modifier){
 //    )
 //}
 
+@Composable
+fun GreetingImage(message: String, from: String,modifier: Modifier = Modifier){
+    val image = painterResource(R.drawable.macan)
+    Image(
+        painter = image,
+        contentDescription = null
+    )
+}
+
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     HappyBirthday3Theme {
-        GreetingText(message = "Happy Birthday Danis!", from = "From Emma")
+//        GreetingText(message = "Happy Birthday Danis!", from = "From Emma")
+        GreetingImage(message = "Happy Birthday Danis!", from = "From Emma")
     }
 }
