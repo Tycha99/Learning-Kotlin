@@ -3,11 +3,11 @@ open class SmartDevice(val name: String, val category: String) {
     var deviceStatus = "online"
 
     open fun turnOn() {
-        // function body
+        deviceStatus = "on"
     }
 
     open fun turnOff() {
-        // function body
+        deviceStatus = "off"
     }
 }
 
