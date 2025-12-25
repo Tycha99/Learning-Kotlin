@@ -1,5 +1,6 @@
 package com.example.happybirthday3
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,34 +15,37 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.happybirthday3.ui.theme.HappyBirthday3Theme
 
 class MainActivity : ComponentActivity() {
+    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             HappyBirthday3Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                Scaffold(modifier = Modifier.fillMaxSize()) {}
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun GreetingText(message: String, modifier: Modifier = Modifier){
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = message
     )
 }
+
+//@Composable
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    Text(
+//        text = "Hello $name!",
+//        modifier = modifier
+//    )
+//}
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     HappyBirthday3Theme {
-        Greeting("Danis")
+        GreetingText(message = "Happy Birthday Danis!")
     }
 }
