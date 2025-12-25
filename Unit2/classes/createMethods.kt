@@ -7,3 +7,10 @@ class SmartDevice {
         println("Smart device is turned off.")
     }
 }
+
+
+fun main() {
+    val smartTvDevice = SmartDevice()
+    smartTvDevice.turnOn()
+    smartTvDevice.turnOff()
+}
